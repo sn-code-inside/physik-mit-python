@@ -84,7 +84,7 @@ def polygon_flaeche(x, y):
 
 def update(n):
     # Aktualisiere die Position des Himmelskörpers.
-    planet.set_data(r[:, n] / AE)
+    planet.set_data(r[:, n].reshape(-1, 1) / AE)
 
     # Aktualisiere des Polygon und die Angabe der Fläche.
     if n >= dN:

@@ -80,7 +80,7 @@ def update(n):
         text_a.set_text(f'a = {np.linalg.norm(a[n]):.3f} m/s²')
 
     # Aktualisiere die Position des Punktes.
-    punkt.set_data(r[n])
+    punkt.set_data(r[n].reshape(-1, 1))
 
     return punkt, arrow_v, arrow_a, text_a, text_v
 

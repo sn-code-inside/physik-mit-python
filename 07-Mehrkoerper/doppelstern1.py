@@ -143,8 +143,8 @@ linie_t4, = ax4.plot(0, 0, '-k')
 
 def update(n):
     # Aktualisiere die Position der Sterne.
-    stern1.set_data(r1[:, n] / AE)
-    stern2.set_data(r2[:, n] / AE)
+    stern1.set_data(r1[:, n].reshape(-1, 1) / AE)
+    stern2.set_data(r2[:, n].reshape(-1, 1) / AE)
 
     # Berechne die Momentanbeschleunigung und aktualisiere die
     # Vektorpfeile.

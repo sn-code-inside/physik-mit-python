@@ -216,7 +216,7 @@ koerper, = ax.plot([r0[0]], [r0[1]], 'o',
 
 def update(n):
     # Aktualisiere die Position des Skifahrers.
-    koerper.set_data(r[:, n])
+    koerper.set_data(r[:, n].reshape(-1, 1))
 
     # Stelle die Bahnkurve bis zum aktuellen Zeitpunkt dar.
     bahn.set_data(r[:, :n])

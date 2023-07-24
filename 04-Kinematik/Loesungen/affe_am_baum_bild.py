@@ -75,8 +75,8 @@ affe, = ax.plot([0], [0], 'o', color='blue', zorder=100)
 
 def update(n):
     # Aktualisiere die Position der beiden Punkte.
-    pfeil.set_data(r_pfeil[n])
-    affe.set_data(r_affe[n])
+    pfeil.set_data(r_pfeil[n].reshape(-1, 1))
+    affe.set_data(r_affe[n].reshape(-1, 1))
 
     # Aktualisiere die Position des Affenbildes.
     box_affe.xybox = r_affe[n]

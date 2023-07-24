@@ -101,8 +101,8 @@ def update(n):
     arrow_v.set_positions(r_hund[n], r_hund[n] + v_hund[n])
 
     # Aktualisiere die Positionen von Hund und Mensch
-    Hund.set_data(r_hund[n])
-    Mensch.set_data(r_mensch[n])
+    Hund.set_data(r_hund[n].reshape(-1, 1))
+    Mensch.set_data(r_mensch[n].reshape(-1, 1))
 
     # Plotte die Bahnkurve des Hundes bis zum aktuellen
     # Zeitpunkt.

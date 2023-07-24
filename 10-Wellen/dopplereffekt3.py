@@ -107,8 +107,8 @@ def update(n):
     audio_index = int(n / fps * rate)
 
     # Aktualisiere die Positionen von Sender und Empfänger.
-    quelle.set_data(r_B[audio_index])
-    beobach.set_data(r_Q[audio_index])
+    quelle.set_data(r_B[audio_index].reshape(-1, 1))
+    beobach.set_data(r_Q[audio_index].reshape(-1, 1))
 
     return quelle, beobach
 

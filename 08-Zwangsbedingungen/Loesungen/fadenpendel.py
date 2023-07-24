@@ -128,7 +128,7 @@ bahn, = ax.plot([0], [0], '-b', zorder=3)
 def update(n):
     # Aktualisiere die Position des Pendels.
     stange.set_data([0, r[0, n]], [0, r[1, n]])
-    pendel.set_data(r[:, n])
+    pendel.set_data(r[:, n].reshape(-1, 1))
 
     # Stelle die Bahnkurve bis zum aktuellen Zeitpunkt dar.
     bahn.set_data(r[:, :n+1])

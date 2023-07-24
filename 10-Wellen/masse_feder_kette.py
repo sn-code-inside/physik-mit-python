@@ -142,7 +142,7 @@ def update(n):
     teilchen.set_data(r[:, :, n].T)
 
     # Aktualisiere die Position der anregenden Masse.
-    teilchen0.set_data(anreg(t[n]))
+    teilchen0.set_data(anreg(t[n]).reshape(-1, 1))
 
     # Erzeuge ein Array mit den Auslenkungen aller Massen
     # aus der Ruhelage (inklusive der anregenden Masse).

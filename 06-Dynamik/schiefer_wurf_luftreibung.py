@@ -110,7 +110,7 @@ text_a = ax.text(2.1, 0.7, '', color='black')
 
 def update(n):
     # Aktualisiere die Position des Balls.
-    ball.set_data(r[:, n])
+    ball.set_data(r[:, n].reshape(-1, 1))
 
     # Berechne die Momentanbeschleunigung.
     a = F(r[:, n], v[:, n]) / m

@@ -110,8 +110,8 @@ koerper2, = ax1.plot([0], [0], 'o', color='blue')
 
 def update(n):
     # Aktualisiere die Position des Himmelskörper.
-    koerper1.set_data(r1[:, n])
-    koerper2.set_data(r2[:, n])
+    koerper1.set_data(r1[:, n].reshape(-1, 1))
+    koerper2.set_data(r2[:, n].reshape(-1, 1))
 
     return koerper1, koerper2
 

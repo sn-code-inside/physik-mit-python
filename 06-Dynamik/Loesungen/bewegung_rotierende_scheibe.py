@@ -68,7 +68,7 @@ koerper, = ax.plot([0], [0], 'o', zorder=5,
 
 def update(n):
     # Aktualisiere die Position des Körpers.
-    koerper.set_data(r[0:2, n])
+    koerper.set_data(r[0:2, n].reshape(-1, 1))
     # Plotte die Bahnkurve bis zum aktuellen Zeitpunkt.
     bahn.set_data(r[0:2, :n+1])
 

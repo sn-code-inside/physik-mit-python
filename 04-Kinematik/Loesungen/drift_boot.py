@@ -103,7 +103,7 @@ def update(n):
     arrow_d.set_positions(r[n], r[n] + d[n])
 
     # Aktualisiere die Position des Bootes.
-    boot.set_data(r[n])
+    boot.set_data(r[n].reshape(-1, 1))
 
     # Plotte die Bahnkurve des Bootes bis zum aktuellen
     # Zeitpunkt.

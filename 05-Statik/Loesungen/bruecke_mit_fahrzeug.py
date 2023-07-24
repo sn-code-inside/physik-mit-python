@@ -130,12 +130,12 @@ mapper.set_array([-F_max, F_max])
 mapper.autoscale()
 
 # Erzeuge einen Farbbalken am Rand des Bildes.
-fig.colorbar(mapper, format='%.0g', label='Kraft [N]',
-             fraction=0.12, pad=0.2, orientation='horizontal')
+fig.colorbar(mapper, format='%.0g', label='Kraft [N]', pad=0.2,
+             fraction=0.12, orientation='horizontal', ax=ax)
 
 # Plotte die Knotenpunkte in Blau und die Stützpunkte in Rot.
 plt_knot, = ax.plot(punkte[idx_knoten, 0],
-                       punkte[idx_knoten, 1], 'bo', zorder=3)
+                    punkte[idx_knoten, 1], 'bo', zorder=3)
 plt_stuetz, = ax.plot(punkte[idx_stuetz, 0],
                       punkte[idx_stuetz, 1], 'ro', zorder=3)
 
@@ -205,7 +205,7 @@ def update(frame):
         p.set_color(mapper.to_rgba(kraft))
 
     # Aktualisiere die Position des Fahrzeugs.
-    plt_fahrz.set_xdata(pos)
+    plt_fahrz.set_xdata([pos])
 
     return [plt_fahrz, plt_knot, plt_stuetz] + plt_stab
 

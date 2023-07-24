@@ -81,7 +81,7 @@ def update(n):
     faden.set_data([0, r[n, 0]], [0, r[n, 1]])
 
     # Aktualisiere die Position des Punktes.
-    Punkt.set_data(r[n])
+    Punkt.set_data(r[n].reshape(-1, 1))
 
     return Punkt, arrow_v, arrow_a, faden
 

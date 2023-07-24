@@ -148,8 +148,8 @@ def update(n):
     n = min(audio_index, t.size - 1)
 
     # Aktualisiere die Positionen von Sender und Empfänger.
-    sender.set_data(r_Q[n])
-    empf.set_data(r_B[n])
+    sender.set_data(r_Q[n].reshape(-1, 1))
+    empf.set_data(r_B[n].reshape(-1, 1))
 
     # Aktualisiere die Fourier-Transformation.
     if n > N_fft:

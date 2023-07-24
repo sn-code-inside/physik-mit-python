@@ -95,7 +95,7 @@ text_t = ax.text(0.01, 0.95, '', color='blue',
 
 def update(n):
     # Aktualisiere die Position des Himmelskörpers.
-    planet.set_data(r[:, n] / AE)
+    planet.set_data(r[:, n].reshape(-1, 1) / AE)
 
     # Berechne die Momentanbeschleunigung und aktualisiere die
     # Vektorpfeile.

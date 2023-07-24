@@ -74,8 +74,8 @@ def update(n):
     long.set_xdata(x + u)
 
     # Aktualisiere die Position des herovrgehobenen Punktes.
-    trans1.set_ydata(u[ind_rot])
-    long1.set_xdata(x[ind_rot] + u[ind_rot])
+    trans1.set_ydata([u[ind_rot]])
+    long1.set_xdata([x[ind_rot] + u[ind_rot]])
 
     return long, trans, long1, trans1
 

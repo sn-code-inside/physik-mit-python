@@ -115,8 +115,8 @@ def update(n):
     rb = np.array([2 * L + L1, 0.0])
 
     # Aktulisiere die Position der Massen.
-    masse1.set_data(r1)
-    masse2.set_data(r2)
+    masse1.set_data(r1.reshape(-1, 1))
+    masse2.set_data(r2.reshape(-1, 1))
 
     # Aktualisiere die linke Feder.
     feder1.set_data(schraubenfeder.data(ra, r1, N=10, R0=L/20,

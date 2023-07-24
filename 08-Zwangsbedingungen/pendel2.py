@@ -107,7 +107,7 @@ def update(n):
     bahn.set_data(r[0, :n + 1], r[1, :n + 1])
 
     # Aktualisiere die Position des Pendelkörpers.
-    koerper.set_data(r[:, n])
+    koerper.set_data(r[:, n].reshape(-1, 1))
 
     # Aktualisiere die Pendelstange.
     stange.set_data([0, r[0, n]], [0, r[1, n]])

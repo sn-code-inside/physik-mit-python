@@ -29,7 +29,7 @@ class MainWindow(PyQt5.QtWidgets.QMainWindow):
         # Lade das Benutzerinterface und erzeuge die GUI-Objekte.
         PyQt5.uic.loadUi('schiefer_wurf_animation.ui', self)
 
-        # Definiere eine Statusvariable, die bei eine
+        # Definiere eine Statusvariable, die bei einer
         # fehlerhaften Eingabe auf False gesetzt wird.
         self.eingabe_okay = True
 
@@ -69,18 +69,17 @@ class MainWindow(PyQt5.QtWidgets.QMainWindow):
         # Update-Funktion für die Animation
         def update(n):
             if n < self.t.size:
-                self.punkt.set_data(self.r[0, n], self.r[1, n])
+                self.punkt.set_data(self.r[:, n].reshape(-1, 1))
                 self.text.set_text(f't = {self.t[n]:.2f} s')
             else:
                 # Halte die Animation an, wenn wir am Ende
                 # der Simulation angekommen sind.
                 self.punkt.set_data([], [])
                 self.text.set_text('')
-                self.anim.event_source.stop()
             return self.punkt, self.text, self.plot
 
         # Setze das in der Animation als nächstes angezeigte
-        # Bild auf Null.
+        # Bild auf null.
         self.currentframe = 0
 
         # Definiere einen Generator. Dieser gibt die aktuelle

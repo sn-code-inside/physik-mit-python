@@ -98,7 +98,7 @@ punkt, = ax.plot([0], [0], 'or', zorder=5)
 
 
 def update(n):
-    punkt.set_data(omega[n], x[n])
+    punkt.set_data([omega[n]], [x[n]])
     plot.set_data(omega[0:n+1], x[0:n+1])
     return punkt, plot
 

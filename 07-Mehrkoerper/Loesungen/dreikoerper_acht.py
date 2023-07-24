@@ -117,7 +117,7 @@ text = ax.text(-1.1, 1.1, '')
 
 def update(n):
     for i in range(N):
-        planet[i].set_data(r[i, 0, n] / AE, r[i, 1, n] / AE)
+        planet[i].set_data([r[i, 0, n] / AE], [r[i, 1, n] / AE])
     text.set_text(f'{n * dt / jahr:.2f} Jahre')
     return planet + [text]
 

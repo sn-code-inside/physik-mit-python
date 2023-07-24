@@ -83,7 +83,7 @@ stange, = ax.plot([0, 0], [0, 0], '-', color='black')
 def update(n):
     # Aktualisiere die Position des Pendelkörpers und der Stange.
     stange.set_data([0, r[0, n]], [0, r[1, n]])
-    koerper.set_data(r[:, n])
+    koerper.set_data(r[:, n].reshape(-1, 1))
     return stange, koerper
 
 

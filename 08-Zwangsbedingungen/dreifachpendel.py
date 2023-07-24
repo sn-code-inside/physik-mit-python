@@ -187,9 +187,9 @@ lines, = ax.plot([0, 0], [0, 0], 'k-', zorder=4)
 
 def update(n):
     # Aktualisiere die Position des Pendelkörpers.
-    p1.set_data(r1[:, n])
-    p2.set_data(r2[:, n])
-    p3.set_data(r3[:, n])
+    p1.set_data(r1[:, n].reshape(-1, 1))
+    p2.set_data(r2[:, n].reshape(-1, 1))
+    p3.set_data(r3[:, n].reshape(-1, 1))
 
     # Aktualisiere die Position der Pendelstangen.
     p0 = np.array((0, 0))

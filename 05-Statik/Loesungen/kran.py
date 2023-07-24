@@ -88,7 +88,7 @@ mapper = mpl.cm.ScalarMappable(cmap=mpl.cm.jet)
 mapper.set_clim([-F_max, F_max])
 mapper.set_array([])
 fig.colorbar(mapper, format='%.0g', label='Kraft [N]',
-             orientation='horizontal', shrink=0.5)
+             orientation='horizontal', shrink=0.5, ax=ax)
 
 # Plotte die Knotenpunkte in Blau und die Stützpunkte in Rot.
 ax.plot(punkte[idx_knoten, 0], punkte[idx_knoten, 1], 'bo')
